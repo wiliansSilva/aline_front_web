@@ -7,7 +7,7 @@ class Esqueceu extends Component{
     constructor(){
         super()
         this.state={
-            message
+            //message=""
         }
     }
     

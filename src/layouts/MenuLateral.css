@@ -1,0 +1,21 @@
+.container_menulat{
+    background-color: #4282FF;
+    height: 100vh;
+    width: 20%;
+    float: left;
+    display: flex;
+}
+
+.container_menuzinho{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+    margin-bottom: 300px;
+}
+
+.container_menuzinho a{
+    margin-bottom: 10px;
+    font-size: 36px;
+    color: white;
+}

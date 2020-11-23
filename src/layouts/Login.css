@@ -21,6 +21,7 @@
     align-self: center;
     width: 150px;
     height: 35px;
+    cursor: pointer;
 }
 
 a{
