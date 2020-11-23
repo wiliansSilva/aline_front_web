@@ -44,3 +44,45 @@
     height: 25px;
     cursor: pointer;
 }
+
+.cadastrados{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border:1px solid #4282FF;
+    width: 90%;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.linha{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: none;
+    border-bottom: 1px solid #4282FF;
+}
+.linha p{
+    margin-left: 20px;
+    font-size: 24px;
+    text-shadow: 1px 2px grey;
+    text-transform: capitalize;
+}
+
+.user_botoes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user_botoes button{
+    font-size: 14px;
+    margin-right: 10px;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    color: #4282FF;
+    border-radius: 8px;
+    border: 1px solid #4282FF;
+    cursor: pointer;
+}

@@ -14,7 +14,7 @@ export default class Login extends Component{
           password:""
         };
         this.postLogin = this.postLogin.bind(this);
-        this.fillState = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
     
 
