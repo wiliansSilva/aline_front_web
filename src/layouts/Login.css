@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-a{
+.container_login a{
     color: #4282FF;
     border:none;
     font-size: 12px;
@@ -34,12 +34,12 @@ a{
 }
 
 
-h1{
+.container_login h1{
     color: #4282FF;
     font-size: 18px;
 }
 
-input{
+.container_login input{
     border:none;
     border-bottom: 1px solid #4282FF;
     width: 242px;

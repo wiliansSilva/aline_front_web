@@ -1,0 +1,46 @@
+
+.container_painel_us{
+    display: flex;
+    flex-direction: row;
+}
+
+.container_usuarios{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    float: right;
+}
+
+.container_cadastro{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 40px;
+    align-self: center;
+    
+}
+.container_cadastro h1{
+    font-size: 20px;
+    color: #4282FF;
+}
+.container_cadastro p{
+    font-size: 20px;
+    color: #4282FF;
+}
+.container_cadastro input{
+    color: #4282FF;
+    border: none;
+    border-bottom: 1px solid #4282FF;
+}
+.container_cadastro button{
+    background-color: #4282FF;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius:8px;
+    margin-top: 20px;
+    align-self: center;
+    width: 120px;
+    height: 25px;
+    cursor: pointer;
+}

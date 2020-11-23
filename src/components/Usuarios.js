@@ -1,4 +1,4 @@
-import '../layouts/Login.css'
+import '../layouts/Usuarios.css'
 import React, {Component} from 'react';
 import MenuLateral from '../components/MenuLateral'
 
@@ -6,7 +6,7 @@ import MenuLateral from '../components/MenuLateral'
 export default class Usuarios extends Component{
     render(){
         return(
-            <div>
+            <div className="container_painel_us">
                 <MenuLateral/>
                 <div className="container_usuarios">
                     <div className="container_cadastro">
@@ -15,7 +15,8 @@ export default class Usuarios extends Component{
                         <input type="text"/>
                         <p>Senha</p>
                         <input type="password"/>
-                        
+                        <button>Cadastrar</button>
+
                     </div>
                 </div>
             </div>
