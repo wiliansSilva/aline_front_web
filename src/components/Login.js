@@ -26,6 +26,7 @@ export default class Login extends Component{
         await postLog.conta(this.state.email, this.state.password).then( response =>{
             console.log(response.data)
             if(response.data.admin){
+                localStorage.setItem('Controle', 0);
                 this.props.history.push("/painel-usuarios");
             }
             else{

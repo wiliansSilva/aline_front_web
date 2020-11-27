@@ -1,0 +1,48 @@
+.container_cod_geral{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+.container_cod{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.container_cod h1{
+    font-size: 18px;
+    color: #4282ff;
+}
+
+.container_cod p{
+    font-size: 18px;
+    color: #4282ff;
+}
+
+.container_cod input{
+    border: none;
+    border-bottom: 1px solid #4282ff;
+    color: #4282ff;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-self: center;
+}
+
+.container_cod button{
+    background-color: #4282FF;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius:8px;
+    margin-top: 20px;
+    align-self: center;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+}

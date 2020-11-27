@@ -1,0 +1,71 @@
+.container_exercicios_opcoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container_exercicios_opcoes button{
+    margin-top: 8px;
+    background-color: white;
+    color: #4282ff;
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid #4282ff;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+
+.container_listagem_exec{
+    display: none;
+    padding-left: 40px;
+    margin-top: 40px;
+}
+
+.container_cadastro_exec{
+    display: flex;
+    flex-direction: column;
+    margin-top:30px;
+    padding-left:40px;
+}
+.container_cadastro_exec h1{
+    font-size: 18px;
+    color: #4282ff;
+}
+.container_cadastro_exec p{
+    font-size: 20px;
+    color: #4282ff;
+}
+.container_cadastro_exec input{
+    border: none;
+    border-bottom: 1px solid #4282ff;
+    width: 20%;
+}
+
+.description{
+    border: none;
+    border: 2px solid #4282ff !important;
+    border-radius: 8px;
+    color: #4282ff;
+    width: 70% !important;
+    height: 80px !important;
+}
+
+.container_listagem_exec h1{
+    font-size: 20px;
+    color: #4282ff;
+    margin-top: 25px;
+}
+.container_listagem_exec input{
+    color: #4282ff;
+    border: none;
+    border-bottom: 1px solid #4282ff;
+    width: 20%;
+}
+
+.cartao{
+    border: 1px solid #4282ff;
+    border-radius: 8px;
+    width: 40%;
+    height: 200px;
+    color: #4282ff;
+}

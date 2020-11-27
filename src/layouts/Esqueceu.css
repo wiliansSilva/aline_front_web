@@ -16,3 +16,28 @@
     flex-direction: column;
     align-self: center;
 }
+
+.container_esq h1{
+    font-size: 18px;
+    color: #4282FF;
+}
+
+.container_esq input{
+    border:none;
+    border-bottom: 1px solid #4282FF;
+    color: #4282FF;
+    margin-bottom: 30px;
+}
+
+.container_esq button{
+    background-color: #4282FF;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius:8px;
+    margin-top: 20px;
+    align-self: center;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+}
