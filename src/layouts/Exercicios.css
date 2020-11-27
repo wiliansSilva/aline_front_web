@@ -41,6 +41,25 @@
     width: 20%;
 }
 
+.container_cadastro_exec button{
+    background-color: #4282FF;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius:8px;
+    margin-top: 20px;
+    align-self: left;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.cartao_cabecalho{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .description{
     border: none;
     border: 2px solid #4282ff !important;

@@ -1,4 +1,4 @@
-import '../layouts/MenuLateral.css'
+import '../layouts/MenuLateral.css';
 import React, {Component} from 'react';
 import $ from "jquery";
 
@@ -13,6 +13,7 @@ export default class MenuLateral extends Component{
         this.decide= this.decide.bind(this)
     }
 
+        //Função pra deixar sublinhado o Usuários ou Exercicios no menu lateral esquerdo
     decide(){
         if (localStorage.getItem("Controle") === 0){
             console.log("entrou if 1");

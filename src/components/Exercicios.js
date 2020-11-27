@@ -6,6 +6,7 @@ import buscaEx from '../services/getExercicios';
 import getUsuarios from '../services/getUsers';
 import execuser from '../services/Exec_us';
 import cadEx from '../services/cadEX';
+import exclui from '../services/excluiExec';
 
 
 export default class Exercicios extends Component{
@@ -29,8 +30,11 @@ export default class Exercicios extends Component{
         this.list = this.list.bind(this);
         this.cad = this.cad.bind(this);
         this.auto= this.auto.bind(this);
+        this.excExec= this.excExec.bind(this);
+        this.cadExec= this.cadExec.bind(this);
     }
     
+    //função pra esperar certo tempo e pesquisar sozinho os exercicios do usuario que o administrador digitar
     auto(evt){
         var email = evt.target.value; // this is the search text
         if(this.timeout) clearTimeout(this.timeout);
@@ -56,6 +60,23 @@ export default class Exercicios extends Component{
     getEx(exerc){
         buscaEx.list(exerc).then(response =>{
             this.setState({exercicios: response.data});
+        })
+    }
+
+    cadExec(user){
+        for(var i=0; i< this.state.emails.length; i++){
+            if(this.state.emails[i][0]=user){
+                cadEx.conta(this.state.emails[i][1]).then(response =>{
+                    console.log(response.data);
+                })
+            }
+        }
+        
+    }
+
+    excExec(id){
+        exclui.deleta(id).then(response =>{
+            console.log(response.data)
         })
     }
 
@@ -116,18 +137,24 @@ export default class Exercicios extends Component{
                         <input type="text"/>
                         <p>Descrição do exercício:</p>
                         <input className="description" type="text" placeholder="Digite algo aqui..."/>
+                        <button>Cadastrar</button>
                     </div>
                     <div className="container_listagem_exec">
                         <h1>Usuário</h1>
                         <input type="text"  className="autobus" placeholder="Email do usuário" onChange={evt => this.auto(evt)}/>
                         <h1>Exercícios</h1>
-                        <div className="cartao">
-                            <p>Título:</p>
-                            <p></p>
-                            <p>Dificuldade:</p>
-                            <p></p>
-                            <p>Descrição do exercício:</p>
-                        </div>
+                        {this.state.exercicios.map( data =>
+                            <div className="cartao">
+                                <div className="cartao_cabecalho">
+                                    <p>Título:</p>
+                                    <button onClick={() => this.excExec}>X</button>
+                                </div>
+                                <p></p>
+                                <p>Dificuldade:</p>
+                                <p></p>
+                                <p>Descrição do exercício:</p>
+                            </div> 
+                            )}
                     </div>
                 </div>
             </div>
