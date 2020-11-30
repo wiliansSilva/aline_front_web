@@ -19,6 +19,11 @@ export default class Exercicios extends Component{
 
         this.state = {
          email: '',
+         usuario: '',
+         link: '',
+         dif: '',
+         titulo: '',
+         descr: '',
          exercicios: [],
          users: [],
          emails: [],
@@ -65,9 +70,10 @@ export default class Exercicios extends Component{
 
     cadExec(user){
         for(var i=0; i< this.state.emails.length; i++){
-            if(this.state.emails[i][0]=user){
-                cadEx.conta(this.state.emails[i][1]).then(response =>{
+            if(this.state.emails[i][0] === user){
+                cadEx.conta(this.state.dif, this.state.descr, this.state.titulo, this.state.link, this.state.emails[i][1]).then(response =>{
                     console.log(response.data);
+                    this.props.history.push("/painel-exercicios");
                 })
             }
         }
@@ -77,7 +83,9 @@ export default class Exercicios extends Component{
     excExec(id){
         exclui.deleta(id).then(response =>{
             console.log(response.data)
+            this.props.history.push("/painel-exercicios");
         })
+
     }
 
 
@@ -128,31 +136,32 @@ export default class Exercicios extends Component{
                     <div className="container_cadastro_exec">
                         <h1>Cadastrar Novos Exercícios</h1>
                         <p>Para o usuário:</p>
-                        <input type="text"/>
+                        <input type="text"　onChange={(e) => {this.setState({usuario: e.target.value })}}/>
                         <p>Link do exercício:</p>
-                        <input type="text"/>
+                        <input type="text" onChange={(e) => {this.setState({link: e.target.value })}}/>
                         <p>Dificuldade:</p>
-                        <input type="number"/>
+                        <input type="number" onChange={(e) => {this.setState({dif: e.target.value })}}/>
                         <p>Título:</p>
-                        <input type="text"/>
+                        <input type="text" onChange={(e) => {this.setState({titulo: e.target.value })}}/>
                         <p>Descrição do exercício:</p>
-                        <input className="description" type="text" placeholder="Digite algo aqui..."/>
-                        <button>Cadastrar</button>
+                        <input className="description" type="text" placeholder="Digite algo aqui..." onChange={(e) => {this.setState({descr: e.target.value })}}/>
+                        <button onClick={() => this.cadExec(this.state.usuario)}>Cadastrar</button>
                     </div>
                     <div className="container_listagem_exec">
                         <h1>Usuário</h1>
                         <input type="text"  className="autobus" placeholder="Email do usuário" onChange={evt => this.auto(evt)}/>
                         <h1>Exercícios</h1>
-                        {this.state.exercicios.map( data =>
+                        {this.state.lista.map( data =>
                             <div className="cartao">
                                 <div className="cartao_cabecalho">
-                                    <p>Título:</p>
-                                    <button onClick={() => this.excExec}>X</button>
+                                    <p>-Título:</p>
+                                    <button onClick={() => this.excExec(data.id)}>X</button>
                                 </div>
-                                <p></p>
-                                <p>Dificuldade:</p>
-                                <p></p>
-                                <p>Descrição do exercício:</p>
+                                <p className="resposta">{data.titulo}</p>
+                                <p>-Dificuldade:</p>
+                                <p className="resposta">{data.dificuldade}</p>
+                                <p>-Descrição do exercício:</p>
+                                <p className="resposta">{data.descricão}</p>
                             </div> 
                             )}
                     </div>

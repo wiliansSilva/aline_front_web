@@ -2,12 +2,14 @@
 .container_painel_us{
     display: flex;
     flex-direction: row;
+    width: 75%;
+    float: right;
 }
 
 .container_usuarios{
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 100%;
     float: right;
 }
 

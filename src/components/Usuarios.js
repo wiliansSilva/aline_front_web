@@ -52,8 +52,9 @@ export default class Usuarios extends Component{
 
     render(){
         return(
-            <div className="container_painel_us">
+            <div>
                 <MenuLateral/>
+            <div className="container_painel_us">
                 <div className="container_usuarios">
                     <div className="container_cadastro">
                         <h1>Cadastrar Novos Usuários</h1>
@@ -77,6 +78,7 @@ export default class Usuarios extends Component{
                         )}
                     </div>
                 </div>
+            </div>
             </div>
         );
     }
