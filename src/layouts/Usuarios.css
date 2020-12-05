@@ -98,3 +98,32 @@
     margin-left: 0px !important;
 }
 
+@media only screen and (max-width: 1000px){
+    .linha{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .nome{
+        width: 100%;
+        margin-left: 0px !important;
+        text-align: center;
+    }
+    .email{
+        width: 100%;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .user_botoes{
+        width: 100%;
+        margin-left: 0px;
+        justify-content: center;
+        margin-bottom:10px;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .container_painel_us{
+        width: 100%;
+    }
+
+}

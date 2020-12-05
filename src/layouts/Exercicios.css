@@ -136,3 +136,18 @@
     width: 250px;
     border-radius: 4px;
 }
+
+@media only screen and (max-width: 800px){
+    .container_exercicios_geral{
+        margin-top:60px;
+        width: 100%;
+    }
+
+    #autobus{
+        width: 55%;
+    }
+
+    .cartao{
+        width: 90%;
+    }
+}
