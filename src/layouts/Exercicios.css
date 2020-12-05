@@ -117,3 +117,22 @@
     margin-left: 10px;
     height: fit-content;
 }
+
+.pesq{
+    color: white;
+    font-size: 18px;
+    border-radius:6px;
+    background-color: #4282FF;
+    border: none;
+    margin-left: 20px;
+    height: fit-content;
+    cursor: pointer;
+}
+
+#selec_em{
+    color: #4282ff;
+    background-color: white;
+    border: 1px solid #4282ff;
+    width: 250px;
+    border-radius: 4px;
+}

@@ -4,7 +4,8 @@ import MenuLateral from '../components/MenuLateral'
 import getUsuarios from '../services/getUsers'
 import delUsuario from '../services/deletUser'
 import cadUsuario from '../services/cad_user'
-
+import Swal from 'sweetalert2'
+import $ from 'jquery';
 
 export default class Usuarios extends Component{
     
@@ -20,15 +21,29 @@ export default class Usuarios extends Component{
         this.deletaUser = this.deletaUser.bind(this);
         this.cadUser = this.cadUser.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.redireciona = this.redireciona.bind(this);
     }
     
     handleChange = (e) =>{this.setState({value: e.target.value})}
     
 
+    
+
+    redireciona(email){
+        localStorage.setItem('vermais_email', email);
+        localStorage.setItem('vermais_control', 1);
+        this.props.history.push("/painel-exercicios");
+    }
+
     cadUser(){
         cadUsuario.conta(this.state.name, this.state.email, this.state.password).then( response => {
             console.log("entra no reload");
-            window.location.reload();
+            Swal.fire({title: 'Usuário Cadastrado!!!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                  }).then(() => {
+                    window.location.reload()
+                  })
         })
     }
 
@@ -43,11 +58,15 @@ export default class Usuarios extends Component{
 
 
     componentDidMount(){
+        if(localStorage.getItem('logado') == 0){
+            this.props.history.push("/");
+        }
+        console.log("aqui")
+        console.log(localStorage.getItem('logado'));
         getUsuarios.lista().then(response =>{
             console.log(response.data);
             this.setState({users: response.data});
         })
-      
       }
 
     render(){
@@ -69,9 +88,10 @@ export default class Usuarios extends Component{
                     <div className="cadastrados">
                         {this.state.users.map( data =>
                         <div className="linha">
-                            <p>{data.name}</p>
+                            <p className="nome">{data.name}</p>
+                            <p className="email">{data.email}</p>
                             <div className="user_botoes">
-                                <button>Ver Mais</button>
+                                <button onClick={() => this.redireciona(data.email)}>Ver Mais</button>
                                 <button onClick={() => this.deletaUser(data.id)}>Deletar</button>
                             </div>
                         </div>
@@ -83,3 +103,5 @@ export default class Usuarios extends Component{
         );
     }
 }
+
+

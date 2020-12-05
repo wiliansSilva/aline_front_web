@@ -66,7 +66,7 @@
 }
 .linha p{
     margin-left: 20px;
-    font-size: 24px;
+    font-size: 18px;
     text-shadow: 1px 2px grey;
     text-transform: capitalize;
 }
@@ -75,6 +75,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 20%;
 }
 
 .user_botoes button{
@@ -88,3 +89,12 @@
     border: 1px solid #4282FF;
     cursor: pointer;
 }
+
+.nome{
+    width: 40%;
+}
+.email{
+    width: 40%;
+    margin-left: 0px !important;
+}
+

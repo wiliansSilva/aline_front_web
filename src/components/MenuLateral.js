@@ -10,8 +10,20 @@ export default class MenuLateral extends Component{
         this.state={
 
         }
-        this.decide= this.decide.bind(this)
+        this.decide= this.decide.bind(this);
+        this.deslogar= this.deslogar.bind(this);
     }
+
+
+
+    deslogar(){
+        console.log(localStorage.getItem('logado'))
+        if(localStorage.getItem('logado') == 1){
+            localStorage.setItem('logado', 0);
+            window.location.replace("/painel-usuarios");
+        }
+    }
+
 
         //Função pra deixar sublinhado o Usuários ou Exercicios no menu lateral esquerdo
     decide(){
@@ -29,6 +41,9 @@ export default class MenuLateral extends Component{
     }
     
     componentDidMount(){
+        if(localStorage.getItem('logado') == 0){
+            window.location.replace("/");
+        }
         console.log(localStorage.getItem('Controle'));
     }
     
@@ -38,6 +53,7 @@ export default class MenuLateral extends Component{
                 <div className="container_menuzinho">
                     <a className="user" onClick={() => this.decide} href="/painel-usuarios">Usuários</a>
                     <a className="exec" onClick={() => this.decide}  href="/painel-exercicios">Exercícios</a>
+                    <button className="sair" onClick={()=> this.deslogar()}>Sair</button>
                 </div>
             </div>
         );

@@ -1,11 +1,18 @@
 .container_menulat{
     background-color: #4282FF;
     height: 100vh;
-    width: 25%;
+    width: 220px;
     float: left;
     display: flex;
     position: fixed;
     align-content: center;
+}
+
+.container_menulat button{
+    color: white;
+    background-color: #4282FF;
+    cursor: pointer;
+    
 }
 
 .container_menuzinho{
@@ -18,6 +25,14 @@
 }
 
 .container_menuzinho a{
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 36px;
+    border: none;
+    color: white;
+}
+
+.sair{
     margin-bottom: 10px;
     text-decoration: none;
     font-size: 36px;

@@ -4,7 +4,6 @@ import postLog from '../services/loginADM'
 import Swal from 'sweetalert2'
 
 
-
 export default class Login extends Component{
     constructor(){
         super();
@@ -27,7 +26,8 @@ export default class Login extends Component{
             console.log(response.data)
             if(response.data.admin){
                 localStorage.setItem('Controle', 0);
-                this.props.history.push("/painel-usuarios");
+                localStorage.setItem('logado', 1);
+                window.location.replace("/painel-usuarios");
             }
             else{
                 console.log("entrei aqui no 1")
@@ -40,7 +40,16 @@ export default class Login extends Component{
         })
       }
 
-
+      
+      componentDidMount(){
+        console.log(localStorage.getItem('logado'));
+        if(localStorage.getItem('logado') == 1){
+            
+            window.location.replace("/painel-usuarios");
+            console.log(localStorage.getItem('logado'));
+        }  
+        
+      }
 
     render(){
     return(

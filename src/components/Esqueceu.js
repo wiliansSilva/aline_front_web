@@ -26,6 +26,12 @@ export default class Esqueceu extends Component{
         })
     }
 
+    componentDidMount(){
+        if(localStorage.getItem('logado') == 1){
+            this.props.history.push("/painel-usuarios");
+        }
+    }
+
     render(){
     return(
         <div className="container_esq_geral">

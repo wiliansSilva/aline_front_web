@@ -26,6 +26,9 @@ export default class Esqueceu2 extends Component{
  
     
     componentDidMount(){
+        if(localStorage.getItem('logado') == 1){
+            this.props.history.push("/painel-usuarios");
+        }
         this.setState({email: localStorage.getItem("Email_esquecido")})
     }
     
