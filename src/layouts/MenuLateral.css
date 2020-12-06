@@ -24,6 +24,14 @@
     text-align-last: center;
 }
 
+.container_menuzinho p{
+    font-size:19px;
+    text-align: center;
+    color: white;
+    background-color: #4282FF;
+    margin-bottom: 50px;
+}
+
 .container_menuzinho a{
     margin-bottom: 10px;
     text-decoration: none;
@@ -56,6 +64,10 @@
     .container_menulat{
         width: 100%;
         height: 50px;
+    }
+
+    .container_menuzinho p{
+        display: none;
     }
 
     .container_menuzinho{

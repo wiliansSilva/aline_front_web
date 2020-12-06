@@ -33,6 +33,12 @@
     align-self: center;
 }
 
+.container_login img{
+    width: 100px;
+    height: 100px;
+    align-self: center;
+    margin-bottom: 30px;
+}
 
 .container_login h1{
     color: #4282FF;

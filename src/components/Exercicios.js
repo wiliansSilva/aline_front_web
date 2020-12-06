@@ -94,6 +94,15 @@ export default class Exercicios extends Component{
     }
 
     cadExec(user){
+
+        if(this.state.dif == "" || this.state.descr == "" || this.state.titulo == ""|| this.state.link == ""){
+            Swal.fire({title: 'Por favor preencha todos os campos!!!',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                  })
+            }
+        else{
+
         for(var i=0; i< this.state.emails.length; i++){
             if(this.state.emails[i][0] === user){
                 cadEx.conta(this.state.dif, this.state.descr, this.state.titulo, this.state.link, this.state.emails[i][1]).then(response =>{
@@ -106,6 +115,7 @@ export default class Exercicios extends Component{
                   })
                 })
             }
+        }
         }
         
     }

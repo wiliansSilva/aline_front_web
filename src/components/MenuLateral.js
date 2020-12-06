@@ -47,6 +47,7 @@ export default class MenuLateral extends Component{
         return(
             <div className="container_menulat">
                 <div className="container_menuzinho">
+                    <p>Painel Administrativo - Crescer</p>
                     <a className="user" onClick={() => this.decide} href="/painel-usuarios">Usuários</a>
                     <a className="exec" onClick={() => this.decide}  href="/painel-exercicios">Exercícios</a>
                     <a className="sair" onClick={()=>{localStorage.setItem('logado', 0);}} href="/">Sair</a>

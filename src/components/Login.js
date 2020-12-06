@@ -2,7 +2,7 @@ import '../layouts/Login.css'
 import React, {Component} from 'react';
 import postLog from '../services/loginADM'
 import Swal from 'sweetalert2'
-
+import logo from '../logonovo_crescer.png'
 
 export default class Login extends Component{
     constructor(){
@@ -55,6 +55,7 @@ export default class Login extends Component{
     return(
         <div className="container_geral">
             <div className="container_login">
+                <img src={logo} alt="logo_crescer"/>
                 <h1>Email</h1>
                 <input type="text" onChange={(e) => {this.setState({email: e.target.value })}}/>
                 <h1>Senha</h1>

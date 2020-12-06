@@ -36,15 +36,23 @@ export default class Usuarios extends Component{
     }
 
     cadUser(){
-        cadUsuario.conta(this.state.name, this.state.email, this.state.password).then( response => {
-            console.log("entra no reload");
-            Swal.fire({title: 'Usuário Cadastrado!!!',
-                    icon: 'success',
+        if(this.state.email == "" || this.state.name == "" || this.state.password == ""){
+            Swal.fire({title: 'Por favor preencha todos os campos!!!',
+                    icon: 'error',
                     confirmButtonText: 'OK'
-                  }).then(() => {
-                    window.location.reload()
                   })
-        })
+            }
+        else{
+            cadUsuario.conta(this.state.name, this.state.email, this.state.password).then( response => {
+                console.log("entra no reload");
+                Swal.fire({title: 'Usuário Cadastrado!!!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        window.location.reload()
+                    })
+            })
+        }
     }
 
     deletaUser(aux){
