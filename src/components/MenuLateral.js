@@ -49,7 +49,7 @@ export default class MenuLateral extends Component{
                 <div className="container_menuzinho">
                     <a className="user" onClick={() => this.decide} href="/painel-usuarios">Usuários</a>
                     <a className="exec" onClick={() => this.decide}  href="/painel-exercicios">Exercícios</a>
-                    <button className="sair" onClick={()=> this.deslogar()}>Sair</button>
+                    <a className="sair" onClick={()=>{localStorage.setItem('logado', 0);}} href="/">Sair</a>
                 </div>
             </div>
         );
