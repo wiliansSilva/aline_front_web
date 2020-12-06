@@ -56,7 +56,7 @@ export default class Usuarios extends Component{
 
     
 
-
+    
     componentDidMount(){
         if(localStorage.getItem('logado') == 0){
             this.props.history.push("/");
@@ -68,7 +68,6 @@ export default class Usuarios extends Component{
             this.setState({users: response.data});
         })
       }
-
     render(){
         return(
             <div>

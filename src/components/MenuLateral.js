@@ -14,26 +14,25 @@ export default class MenuLateral extends Component{
         this.deslogar= this.deslogar.bind(this);
     }
 
-
-
     deslogar(){
         console.log(localStorage.getItem('logado'))
         if(localStorage.getItem('logado') == 1){
             localStorage.setItem('logado', 0);
-            window.location.replace('/');
+            setTimeout(function(){ window.location.replace('/');}, 1000);
+            
         }
     }
 
 
         //Função pra deixar sublinhado o Usuários ou Exercicios no menu lateral esquerdo
     decide(){
-        if (localStorage.getItem("Controle") === 0){
+        if (localStorage.getItem("Controle") == 0){
             console.log("entrou if 1");
             localStorage.setItem('Controle', 1);
             $(".exec").css("text-decoration", "underline");
             $(".user").css("text-decoration", "none");
         }
-        else if (localStorage.getItem("Controle") === 1){
+        else if (localStorage.getItem("Controle") == 1){
             localStorage.setItem('Controle', 0);
             $(".user").css("text-decoration", "underline");
             $(".exec").css("text-decoration", "none");
@@ -41,9 +40,6 @@ export default class MenuLateral extends Component{
     }
     
     componentDidMount(){
-        if(localStorage.getItem('logado') == 0){
-            this.props.history.push("/");
-        }
         console.log(localStorage.getItem('Controle'));
     }
     
