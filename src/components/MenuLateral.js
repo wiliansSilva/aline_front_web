@@ -6,7 +6,7 @@ export default class MenuLateral extends Component{
     
 
     constructor(){
-        super()
+        super();
         this.state={
 
         }
@@ -20,7 +20,7 @@ export default class MenuLateral extends Component{
         console.log(localStorage.getItem('logado'))
         if(localStorage.getItem('logado') == 1){
             localStorage.setItem('logado', 0);
-            window.location.replace("/painel-usuarios");
+            window.location.replace("/");
         }
     }
 
@@ -42,7 +42,7 @@ export default class MenuLateral extends Component{
     
     componentDidMount(){
         if(localStorage.getItem('logado') == 0){
-            window.location.replace("/");
+            this.props.history.push("/");
         }
         console.log(localStorage.getItem('Controle'));
     }
