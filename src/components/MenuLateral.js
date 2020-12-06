@@ -20,7 +20,7 @@ export default class MenuLateral extends Component{
         console.log(localStorage.getItem('logado'))
         if(localStorage.getItem('logado') == 1){
             localStorage.setItem('logado', 0);
-            window.location.href='/';
+            window.location.replace('/');
         }
     }
 
